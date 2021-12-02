@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="1Fa-Qo-Fr2"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="8ct-l4-Fth"/>
                 </viewController>
@@ -31,10 +31,25 @@
                     <view key="view" contentMode="scaleToFill" id="OeR-RL-XdG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNx-4Q-Es2" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="194" width="374" height="519"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7x5-rD-Dbc"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MNx-4Q-Es2" firstAttribute="leading" secondItem="7x5-rD-Dbc" secondAttribute="leading" constant="20" id="5z6-IM-z67"/>
+                            <constraint firstItem="7x5-rD-Dbc" firstAttribute="bottom" secondItem="MNx-4Q-Es2" secondAttribute="bottom" constant="100" id="OLG-mS-VKI"/>
+                            <constraint firstItem="MNx-4Q-Es2" firstAttribute="top" secondItem="7x5-rD-Dbc" secondAttribute="top" constant="150" id="aIa-TR-Dak"/>
+                            <constraint firstItem="7x5-rD-Dbc" firstAttribute="trailing" secondItem="MNx-4Q-Es2" secondAttribute="trailing" constant="20" id="eCX-sP-9hR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="9l7-sX-QZs"/>
+                    <connections>
+                        <outlet property="calendarView" destination="MNx-4Q-Es2" id="QLL-Ei-83M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GT-8D-L41" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,11 +75,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
