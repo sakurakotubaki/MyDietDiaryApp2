@@ -55,7 +55,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="inputWeightTextField" destination="ker-CR-S6L" id="ZA1-XD-gtM"/>
+                        <outlet property="inputDateTextField" destination="Lva-Xc-ye4" id="Nlq-t8-RlV"/>
+                        <outlet property="inputWeightTextField" destination="Lva-Xc-ye4" id="p2o-gF-Pg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="So7-Uz-oOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
