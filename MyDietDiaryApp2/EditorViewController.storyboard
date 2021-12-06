@@ -38,6 +38,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zec-YM-juk">
+                                <rect key="frame" x="40" y="722" width="334" height="40"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Ebx-Jf-O86"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="保存">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZFY-24-F3D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,10 +57,13 @@
                             <constraint firstItem="Lva-Xc-ye4" firstAttribute="top" secondItem="VmE-Ye-m6p" secondAttribute="top" constant="124" id="9D5-25-UXu"/>
                             <constraint firstItem="Lva-Xc-ye4" firstAttribute="leading" secondItem="OMD-5x-scE" secondAttribute="leading" id="ANh-mc-pUj"/>
                             <constraint firstItem="Lva-Xc-ye4" firstAttribute="leading" secondItem="ker-CR-S6L" secondAttribute="leading" id="I4f-7V-00c"/>
+                            <constraint firstItem="Zec-YM-juk" firstAttribute="leading" secondItem="ZFY-24-F3D" secondAttribute="leading" constant="40" id="ID3-vs-GDd"/>
+                            <constraint firstItem="ZFY-24-F3D" firstAttribute="bottom" secondItem="Zec-YM-juk" secondAttribute="bottom" constant="100" id="Mep-AQ-VNN"/>
                             <constraint firstItem="Lva-Xc-ye4" firstAttribute="leading" secondItem="O0W-bC-uSd" secondAttribute="leading" id="OM2-Fc-Gka"/>
                             <constraint firstItem="Lva-Xc-ye4" firstAttribute="leading" secondItem="ZFY-24-F3D" secondAttribute="leading" constant="40" id="aJI-EJ-UTu"/>
                             <constraint firstItem="ker-CR-S6L" firstAttribute="top" secondItem="O0W-bC-uSd" secondAttribute="bottom" constant="25" id="fd7-1j-VbR"/>
                             <constraint firstItem="Lva-Xc-ye4" firstAttribute="top" secondItem="OMD-5x-scE" secondAttribute="bottom" constant="20" id="hlD-Oa-PH9"/>
+                            <constraint firstItem="ZFY-24-F3D" firstAttribute="trailing" secondItem="Zec-YM-juk" secondAttribute="trailing" constant="40" id="nzc-fa-b3X"/>
                             <constraint firstItem="Lva-Xc-ye4" firstAttribute="trailing" secondItem="ker-CR-S6L" secondAttribute="trailing" id="xUS-Jv-pzj"/>
                             <constraint firstItem="Lva-Xc-ye4" firstAttribute="centerX" secondItem="VmE-Ye-m6p" secondAttribute="centerX" id="xdC-d5-xka"/>
                         </constraints>
@@ -57,6 +71,7 @@
                     <connections>
                         <outlet property="inputDateTextField" destination="Lva-Xc-ye4" id="Nlq-t8-RlV"/>
                         <outlet property="inputWeightTextField" destination="Lva-Xc-ye4" id="p2o-gF-Pg2"/>
+                        <outlet property="saveButton" destination="Zec-YM-juk" id="43E-Gq-5zQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="So7-Uz-oOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -67,6 +82,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -10,6 +10,7 @@ import UIKit
 class EditorViewController: UIViewController {
     @IBOutlet weak var inputWeightTextField: UITextField!
     @IBOutlet weak var inputDateTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     var datePicker: UIDatePicker {
         let datePicker: UIDatePicker = UIDatePicker()
@@ -42,6 +43,7 @@ class EditorViewController: UIViewController {
         super.viewDidLoad()
         configureWeightTextField()
         configureDateTextField()
+        configureSaveButton()
     }
     
     @objc func didTapDone() {
@@ -60,5 +62,9 @@ class EditorViewController: UIViewController {
     
     @objc func didChangeDate(picker: UIDatePicker) {
         inputDateTextField.text = dateFormatter.string(from: picker.date)
+    }
+    
+    func configureSaveButton() {
+        saveButton.layer.cornerRadius = 5
     }
 }
