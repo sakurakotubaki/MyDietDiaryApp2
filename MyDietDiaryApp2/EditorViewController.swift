@@ -19,6 +19,9 @@ class EditorViewController: UIViewController {
     @IBAction func saveButton(_ sender: UIButton) {
         saveRecord()
     }
+    @IBAction func deleteButton(_ sender: UIButton) {
+        deleteRecord()
+    }
     
     var record = WeightRecord()
     var delegate: EditorViewControllerDelegate?
@@ -93,6 +96,21 @@ class EditorViewController: UIViewController {
             }
             realm.add(record)
         }
+        delegate?.recordUpdate()
+        dismiss(animated: true)
+    }
+    
+    func deleteRecord() {
+        let calendar = Calendar(identifier: .gregorian)
+        let startOfDate = calendar.date(bySettingHour: 0, minute: 0, second: 0, of: record.date)!
+        let endOfDate = calendar.date(bySettingHour: 23, minute: 59, second: 59, of: record.date)!
+        let realm = try! Realm()
+        // NSPredicateを使用した条件検索
+        let recordList = Array(realm.objects(WeightRecord.self).filter("date BETWEEN {%@, %@}", startOfDate, endOfDate))
+        recordList.forEach({ record in try! realm.write {
+            realm.delete(record)
+            }
+        })
         delegate?.recordUpdate()
         dismiss(animated: true)
     }
