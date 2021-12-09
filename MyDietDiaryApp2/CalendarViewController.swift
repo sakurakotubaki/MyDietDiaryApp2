@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
 class CalenderViewController: UIViewController {
     @IBOutlet weak var calendarView: FSCalendar!
@@ -15,10 +16,20 @@ class CalenderViewController: UIViewController {
         transitionToEditorView()
     }
     
+    var recordList: [WeightRecord] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCalendar()
         configureButton()
+        // FSCalendarDateSourceを有効化
+        calendarView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getRecord()
+        calendarView.reloadData()
     }
     
     func configureCalendar() {
@@ -51,5 +62,19 @@ class CalenderViewController: UIViewController {
                 storyboad.instantiateInitialViewController()
                 as? EditorViewController else { return }
         present(editorViewController, animated: true)
+    }
+    
+    func getRecord() {
+        let realm = try! Realm()
+        recordList = Array(realm.objects(WeightRecord.self))
+    }
+}
+
+extension CalenderViewController: FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let dateList = recordList.map({ $0.date.zeroclock })
+        // 比較対象のDate型の年月日が一致していた場合にtrueになる
+        let isEqualDate = dateList.contains(date.zeroclock)
+        return isEqualDate ? 1 : 0
     }
 }
