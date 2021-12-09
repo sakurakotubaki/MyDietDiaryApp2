@@ -66,6 +66,7 @@ class CalenderViewController: UIViewController {
         if let record = record {
             editorViewController.record = record
         }
+        editorViewController.delegate = self
         present(editorViewController, animated: true)
     }
     
@@ -89,5 +90,12 @@ extension CalenderViewController: FSCalendarDelegate {
         calendar.deselect(date)
         guard let record = recordList.first(where: { $0.date.zeroclock == date.zeroclock }) else { return }
         transitionToEditorView(with: record)
+    }
+}
+
+extension CalenderViewController: EditorViewControllerDelegate {
+    func recordUpdate() {
+        getRecord()
+        calendarView.reloadData()
     }
 }

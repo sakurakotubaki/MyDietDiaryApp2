@@ -8,6 +8,10 @@
 import UIKit
 import RealmSwift
 
+protocol EditorViewControllerDelegate {
+    func recordUpdate()
+}
+
 class EditorViewController: UIViewController {
     @IBOutlet weak var inputWeightTextField: UITextField!
     @IBOutlet weak var inputDateTextField: UITextField!
@@ -17,6 +21,7 @@ class EditorViewController: UIViewController {
     }
     
     var record = WeightRecord()
+    var delegate: EditorViewControllerDelegate?
     
     var datePicker: UIDatePicker {
         let datePicker: UIDatePicker = UIDatePicker()
@@ -24,7 +29,7 @@ class EditorViewController: UIViewController {
         datePicker.timeZone = .current
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = Locale(identifier: "ja-JP")
-        datePicker.date = Date()
+        datePicker.date = record.date
         datePicker.addTarget(self, action: #selector(didChangeDate), for: .valueChanged)
         return datePicker
     }
@@ -50,7 +55,6 @@ class EditorViewController: UIViewController {
         configureWeightTextField()
         configureDateTextField()
         configureSaveButton()
-        print("👀record: \(record)")
     }
     
     @objc func didTapDone() {
@@ -59,12 +63,13 @@ class EditorViewController: UIViewController {
     
     func configureWeightTextField() {
         inputWeightTextField.inputAccessoryView = toolBar
+        inputWeightTextField.text = String(record.weight)
     }
     
     func configureDateTextField() {
         inputDateTextField.inputView = datePicker
         inputDateTextField.inputAccessoryView = toolBar
-        inputDateTextField.text = dateFormatter.string(from: Date())
+        inputDateTextField.text = dateFormatter.string(from: record.date)
     }
     
     @objc func didChangeDate(picker: UIDatePicker) {
@@ -88,6 +93,7 @@ class EditorViewController: UIViewController {
             }
             realm.add(record)
         }
+        delegate?.recordUpdate()
         dismiss(animated: true)
     }
 }
