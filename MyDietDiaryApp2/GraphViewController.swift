@@ -11,14 +11,35 @@ import RealmSwift
 
 class GraphViewController: UIViewController {
     @IBOutlet weak var graphView: LineChartView!
+    @IBOutlet weak var startDateTextField: UITextField!
+    @IBOutlet weak var endDateTextField: UITextField!
+    
     
     var recordList: [WeightRecord] = []
+    
+    var datePicker: UIDatePicker {
+        let datePicker: UIDatePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.timeZone = .current
+        datePicker.preferredDatePickerStyle = .wheels
+        datePicker.locale = Locale(identifier: "ja-JP")
+        return datePicker
+    }
+    
+    var dateFormatter: DateFormatter {
+        let dateFormatt = DateFormatter()
+        dateFormatt.dateStyle = .long
+        dateFormatt.timeZone = .current
+        dateFormatt.locale = Locale(identifier: "ja-JP")
+        return dateFormatt
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setRecord()
         updateGraph()
         configureGraph()
+        configureTextFiled()
     }
     
     func setRecord() {
@@ -46,5 +67,18 @@ class GraphViewController: UIViewController {
         let dateList = recordList.map({ $0.date })
         titleFormatter.dateList = dateList
         graphView.xAxis.valueFormatter = titleFormatter
+    }
+    
+    func configureTextFiled() {
+        let startDatePicker = datePicker
+        let endDatePicker = datePicker
+        let today = Date()
+        let pastMonth = Calendar.current.date(byAdding: .month, value: -1, to: today)!
+        startDatePicker.date = pastMonth
+        endDatePicker.date = today
+        startDateTextField.inputView = startDatePicker
+        endDateTextField.inputView = endDatePicker
+        startDateTextField.text = dateFormatter.string(from: pastMonth)
+        endDateTextField.text = dateFormatter.string(from: today)
     }
 }

@@ -20,24 +20,70 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="569"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期間" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noC-Am-yAL">
+                                <rect key="frame" x="10" y="74" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="u0y-Mt-QH1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ox4-yY-PVB">
+                                <rect key="frame" x="70" y="76" width="106" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="6Hg-lj-iSq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V3n-4s-ZSd">
+                                <rect key="frame" x="264" y="76" width="140" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="SGZ-OC-kaQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beg-5T-OdT">
+                                <rect key="frame" x="186" y="78.5" width="68" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Fa-Qo-Fr2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="beg-5T-OdT" firstAttribute="leading" secondItem="Ox4-yY-PVB" secondAttribute="trailing" constant="10" id="4tQ-bJ-Xe6"/>
+                            <constraint firstItem="Ox4-yY-PVB" firstAttribute="centerY" secondItem="noC-Am-yAL" secondAttribute="centerY" id="E7X-BG-6hW"/>
+                            <constraint firstItem="V3n-4s-ZSd" firstAttribute="top" secondItem="1Fa-Qo-Fr2" secondAttribute="top" constant="32" id="HLl-gq-PFN"/>
+                            <constraint firstItem="Ox4-yY-PVB" firstAttribute="top" secondItem="1Fa-Qo-Fr2" secondAttribute="top" constant="32" id="KCL-DS-Mlf"/>
+                            <constraint firstItem="SMh-5M-Rj4" firstAttribute="top" secondItem="noC-Am-yAL" secondAttribute="bottom" constant="40" id="RMR-FI-JGU"/>
+                            <constraint firstItem="1Fa-Qo-Fr2" firstAttribute="trailing" secondItem="Ox4-yY-PVB" secondAttribute="trailing" constant="238" id="RVr-Gp-UDp"/>
                             <constraint firstItem="1Fa-Qo-Fr2" firstAttribute="bottom" secondItem="SMh-5M-Rj4" secondAttribute="bottom" constant="100" id="U8S-C1-c7W"/>
                             <constraint firstItem="SMh-5M-Rj4" firstAttribute="top" secondItem="1Fa-Qo-Fr2" secondAttribute="top" constant="100" id="Uli-4C-s6R"/>
+                            <constraint firstItem="1Fa-Qo-Fr2" firstAttribute="trailing" secondItem="V3n-4s-ZSd" secondAttribute="trailing" constant="10" id="Wo1-wX-g01"/>
+                            <constraint firstItem="Ox4-yY-PVB" firstAttribute="leading" secondItem="noC-Am-yAL" secondAttribute="trailing" constant="20" id="erD-OD-UIg"/>
                             <constraint firstItem="SMh-5M-Rj4" firstAttribute="leading" secondItem="1Fa-Qo-Fr2" secondAttribute="leading" id="fO2-ZP-sQz"/>
+                            <constraint firstItem="V3n-4s-ZSd" firstAttribute="leading" secondItem="beg-5T-OdT" secondAttribute="trailing" constant="10" id="iSf-Ib-ehH"/>
+                            <constraint firstItem="noC-Am-yAL" firstAttribute="top" secondItem="1Fa-Qo-Fr2" secondAttribute="top" constant="30" id="j4O-js-s0j"/>
+                            <constraint firstItem="noC-Am-yAL" firstAttribute="leading" secondItem="1Fa-Qo-Fr2" secondAttribute="leading" constant="10" id="jRG-ur-XPh"/>
                             <constraint firstItem="1Fa-Qo-Fr2" firstAttribute="trailing" secondItem="SMh-5M-Rj4" secondAttribute="trailing" id="p7n-QA-y1E"/>
+                            <constraint firstItem="V3n-4s-ZSd" firstAttribute="centerY" secondItem="noC-Am-yAL" secondAttribute="centerY" id="svQ-lp-JmH"/>
+                            <constraint firstItem="beg-5T-OdT" firstAttribute="centerY" secondItem="noC-Am-yAL" secondAttribute="centerY" id="w9X-YT-8l5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="8ct-l4-Fth"/>
                     <connections>
+                        <outlet property="endDateTextField" destination="V3n-4s-ZSd" id="WYX-XC-8EC"/>
                         <outlet property="graphView" destination="SMh-5M-Rj4" id="ckd-RY-D5n"/>
+                        <outlet property="startDateTextField" destination="Ox4-yY-PVB" id="7Dw-Dn-Ro8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igQ-Z7-hwl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="236"/>
+            <point key="canvasLocation" x="318.84057971014494" y="235.71428571428569"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="d6X-Y7-ncx">
