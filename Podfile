@@ -6,6 +6,7 @@ target 'MyDietDiaryApp2' do
   use_frameworks!
   pod 'FSCalendar'
   pod 'RealmSwift'
+  pod 'Charts'
 
   # Pods for MyDietDiaryApp2
 
