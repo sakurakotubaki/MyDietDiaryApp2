@@ -15,10 +15,25 @@
                     <view key="view" contentMode="scaleToFill" id="P12-R2-XWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SMh-5M-Rj4" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="144" width="414" height="569"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Fa-Qo-Fr2"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Fa-Qo-Fr2" firstAttribute="bottom" secondItem="SMh-5M-Rj4" secondAttribute="bottom" constant="100" id="U8S-C1-c7W"/>
+                            <constraint firstItem="SMh-5M-Rj4" firstAttribute="top" secondItem="1Fa-Qo-Fr2" secondAttribute="top" constant="100" id="Uli-4C-s6R"/>
+                            <constraint firstItem="SMh-5M-Rj4" firstAttribute="leading" secondItem="1Fa-Qo-Fr2" secondAttribute="leading" id="fO2-ZP-sQz"/>
+                            <constraint firstItem="1Fa-Qo-Fr2" firstAttribute="trailing" secondItem="SMh-5M-Rj4" secondAttribute="trailing" id="p7n-QA-y1E"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="8ct-l4-Fth"/>
+                    <connections>
+                        <outlet property="graphView" destination="SMh-5M-Rj4" id="ckd-RY-D5n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igQ-Z7-hwl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
