@@ -18,6 +18,7 @@ class GraphViewController: UIViewController {
         super.viewWillAppear(animated)
         setRecord()
         updateGraph()
+        configureGraph()
     }
     
     func setRecord() {
@@ -37,5 +38,13 @@ class GraphViewController: UIViewController {
         graphView.data = LineChartData(dataSet: dataSet)
         graphView.data?.notifyDataChanged()
         graphView.notifyDataSetChanged()
+    }
+    
+    func configureGraph() {
+        graphView.xAxis.labelPosition = .bottom
+        let titleFormatter = GraphDateTitleFormatter()
+        let dateList = recordList.map({ $0.date })
+        titleFormatter.dateList = dateList
+        graphView.xAxis.valueFormatter = titleFormatter
     }
 }
