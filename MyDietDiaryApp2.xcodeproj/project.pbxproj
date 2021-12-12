@@ -12,7 +12,6 @@
 		B37BCD5D2757A6FC007CA1AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BCD5C2757A6FC007CA1AB /* SceneDelegate.swift */; };
 		B37BCD5F2757A6FC007CA1AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BCD5E2757A6FC007CA1AB /* ViewController.swift */; };
 		B37BCD622757A6FC007CA1AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37BCD602757A6FC007CA1AB /* Main.storyboard */; };
-		B37BCD642757A6FE007CA1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37BCD632757A6FE007CA1AB /* Assets.xcassets */; };
 		B37BCD672757A6FE007CA1AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37BCD652757A6FE007CA1AB /* LaunchScreen.storyboard */; };
 		B37BCD722757A6FE007CA1AB /* MyDietDiaryApp2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BCD712757A6FE007CA1AB /* MyDietDiaryApp2Tests.swift */; };
 		B37BCD7C2757A6FE007CA1AB /* MyDietDiaryApp2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BCD7B2757A6FE007CA1AB /* MyDietDiaryApp2UITests.swift */; };
@@ -20,6 +19,7 @@
 		B37BCD8B2757A82B007CA1AB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BCD8A2757A82B007CA1AB /* MainTabBarController.swift */; };
 		B37BCD8D2757A8E8007CA1AB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BCD8C2757A8E8007CA1AB /* CalendarViewController.swift */; };
 		B37BCD912757A9A6007CA1AB /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37BCD902757A9A6007CA1AB /* GraphViewController.swift */; };
+		B3B79F352765826A0006A173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37BCD632757A6FE007CA1AB /* Assets.xcassets */; };
 		B3BDA2C327622CE400282F40 /* Date+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BDA2C227622CE400282F40 /* Date+Extention.swift */; };
 		B3C69DE227638DD6009CD4CB /* GraphDateTitleFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C69DE127638DD6009CD4CB /* GraphDateTitleFormatter.swift */; };
 		B3EB40692758FD39009D8EAF /* EditorViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3EB40682758FD39009D8EAF /* EditorViewController.storyboard */; };
@@ -301,8 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B37BCD672757A6FE007CA1AB /* LaunchScreen.storyboard in Resources */,
-				B37BCD642757A6FE007CA1AB /* Assets.xcassets in Resources */,
 				B37BCD622757A6FC007CA1AB /* Main.storyboard in Resources */,
+				B3B79F352765826A0006A173 /* Assets.xcassets in Resources */,
 				B3EB40692758FD39009D8EAF /* EditorViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
