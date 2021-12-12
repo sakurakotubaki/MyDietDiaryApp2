@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Graph View Controller-->
         <scene sceneID="1BM-pd-QMm">
             <objects>
                 <viewController id="Lpd-nx-fYN" customClass="GraphViewController" customModule="MyDietDiaryApp2" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <constraint firstItem="beg-5T-OdT" firstAttribute="centerY" secondItem="noC-Am-yAL" secondAttribute="centerY" id="w9X-YT-8l5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="8ct-l4-Fth"/>
+                    <tabBarItem key="tabBarItem" title="" image="graphIcon" id="8ct-l4-Fth"/>
                     <connections>
                         <outlet property="endDateTextField" destination="V3n-4s-ZSd" id="WYX-XC-8EC"/>
                         <outlet property="graphView" destination="SMh-5M-Rj4" id="ckd-RY-D5n"/>
@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="318.84057971014494" y="235.71428571428569"/>
         </scene>
-        <!--Item 1-->
+        <!--Calender View Controller-->
         <scene sceneID="d6X-Y7-ncx">
             <objects>
                 <viewController id="zrq-Ql-jxG" customClass="CalenderViewController" customModule="MyDietDiaryApp2" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,7 +125,7 @@
                             <constraint firstItem="7x5-rD-Dbc" firstAttribute="bottom" secondItem="Hb4-Kz-vYm" secondAttribute="bottom" constant="20" id="vRC-58-Dmr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="9l7-sX-QZs"/>
+                    <tabBarItem key="tabBarItem" title="" image="calendarIcon" id="9l7-sX-QZs"/>
                     <connections>
                         <outlet property="addButton" destination="Hb4-Kz-vYm" id="bWV-db-rcn"/>
                         <outlet property="calendarView" destination="MNx-4Q-Es2" id="QLL-Ei-83M"/>
@@ -155,6 +155,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendarIcon" width="25" height="25"/>
+        <image name="graphIcon" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
